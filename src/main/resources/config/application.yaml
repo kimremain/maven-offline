@@ -1,0 +1,34 @@
+# ┌──────────────────────────────
+# │ global
+# └──────────────────────────────
+spring:
+  application:
+    name: mavenlocal
+  profiles:
+    active: loc
+  main:
+    allow-bean-definition-overriding: true
+  thymeleaf:
+    prefix : classpath:static/template/
+    suffix : .html
+    cache : false
+    
+    
+server:
+  shutdown: graceful
+  servlet:
+    register-default-servlet: true
+    
+resttemplate:
+  timeout.conn: 3000
+  timeout.read: 6000
+  max.try.conn: 3
+
+#web:
+#  view:
+#    prefix: classpath:/static/templates/
+#    suffix: .html
+
+cache:
+  heap: 10000000
+  ttl: 60

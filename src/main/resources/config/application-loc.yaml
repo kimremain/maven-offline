@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  redis:
+    database: 0
+    host: 172.26.5.203
+    port: 6379
+    timeout: 1000 
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework: DEBUG
+    com.kimremain.mavenlocal: DEBUG
+    com.spring.ibatis: 
+    jdbc: WARN
+    jdbc.resultsettable: DEBUG
+    jdbc.sqltiming: DEBUG
+    io.lettuce.core.protocol: INFO
+  pattern:
+    console: "%d{HH:mm:ss} %-5level %X{identifier} %logger{36} : %msg%n"
+    file: "%d{HH:mm:ss} %-5level %X{identifier} %logger{36} : %msg%n"
+  file:
+    path: ../logs/
+    max-size: 100MB
+    max-history: 10
