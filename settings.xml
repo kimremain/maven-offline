@@ -4,7 +4,7 @@
   <!-- <localRepository>/path/to/local/repo</localRepository>
   -->
     <mirrors>
-    <!-- <mirror> <!--Send all requests to the public group -->
+    <!-- <mirror>
       <id>nexus</id>
       <mirrorOf>*</mirrorOf>
       <url>http://192.168.55.12:8105/repository/maven-public</url>
