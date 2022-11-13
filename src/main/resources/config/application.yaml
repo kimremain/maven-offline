@@ -9,7 +9,7 @@ spring:
   main:
     allow-bean-definition-overriding: true
   thymeleaf:
-    prefix : classpath:static/template/
+    prefix: classpath:templates/
     suffix : .html
     cache : false
     

@@ -13,6 +13,18 @@
 		<springboot.version>2.3.7.RELEASE</springboot.version>
 	</properties>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>5.7.2</version>
+				<type>pom</type>
+				<scope>import</scope>		
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -22,19 +34,19 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
+			<!--<exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-tomcat</artifactId>
 				</exclusion>
-			</exclusions>
+			</exclusions>-->
 			<version>${springboot.version}</version>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-undertow</artifactId>
 			<version>${springboot.version}</version>
-		</dependency>
+		</dependency>-->
 		<!-- 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-undertow</artifactId>
@@ -56,11 +68,11 @@
 			<artifactId>spring-boot-starter-aop</artifactId>
 			<version>${springboot.version}</version>
 		</dependency>
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 			<version>${springboot.version}</version>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-cache</artifactId>
@@ -73,33 +85,44 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-text</artifactId>
+			<version>1.9</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.8</version>
 			<scope>provided</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.19.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
-
-	<repositories>
-		<repository>
-			<id>private</id>
-			<url>http://192.168.55.12:8105/repository/maven-public</url>
-		</repository>
-		<!-- 	    <repository>
-	          <id>local-repository</id> 
-	          <name>local repository</name> 
-	          <url>file://${project.basedir/repo}</url> 
-	    </repository>		-->
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>private</id>
-			<url>http://192.168.55.12:8105/repository/maven-public</url>
-		</pluginRepository>
-	</pluginRepositories>
-
 	<build>
+		<plugins>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-surefire-plugin</artifactId>
+			    <version>2.22.2</version>
+			</plugin>
+		</plugins>
 		<pluginManagement>
 			<plugins>
 				<plugin>

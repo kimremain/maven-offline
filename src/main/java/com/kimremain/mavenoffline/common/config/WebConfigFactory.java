@@ -78,7 +78,7 @@ public class WebConfigFactory implements WebMvcConfigurer{
 //        templateResolver.setPrefix(TEMPLATE_LOCATION);
 //        templateResolver.setCacheable(false);
 //        templateResolver.setSuffix(".html");
-//        templateResolver.setTemplateMode("HTML");
+//        templateResolver.setTemplateMode("HTML5");
 //        //templateResolver.setCharacterEncoding("UTF-8");
 //        templateResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
 //
@@ -99,7 +99,6 @@ public class WebConfigFactory implements WebMvcConfigurer{
 //    public ViewResolver viewResolver() {
 //    	ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
 //        viewResolver.setTemplateEngine(templateEngine());
-//        //viewResolver.setCharacterEncoding("UTF-8");
 //        viewResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
 //
 //        return viewResolver;
